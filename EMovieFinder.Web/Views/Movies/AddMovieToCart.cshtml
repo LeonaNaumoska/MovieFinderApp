@@ -1,0 +1,31 @@
+﻿@model EMovieFinder.Domain.DTO.AddToMovieCartDto
+
+@{
+    ViewData["Title"] = "Add To Movie Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Add Selected Movie to User Shopping Cart:</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4 m-auto">
+        <form asp-action="AddMovieToCart" method="post">
+            <input type="hidden" asp-for="MovieId" />
+            <div class="form-group">
+                <label asp-for="SelectedMovie.MovieName"></label>
+                <input disabled asp-for="SelectedMovie.MovieName" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Quantity"></label>
+                <input disabled asp-for="Quantity" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
